@@ -104,6 +104,7 @@ const Pages: React.FC = () => {
           px="30px"
           py="50px"
           flexDirection="column"
+          justifyContent="space-between"
         >
           <Flex
             w="100%"
@@ -118,7 +119,7 @@ const Pages: React.FC = () => {
           </Flex>
 
           <form onSubmit={handleSubmit}>
-            <Flex flexDir="column" alignItems="center" mb="40px">
+            <Flex flexDir="column" alignItems="center">
               <InputGroup w="70%" mb="15px">
                 <InputLeftElement children={<Search2Icon color="gray.300" />} />
                 <Input
@@ -146,13 +147,13 @@ const Pages: React.FC = () => {
               </Tooltip>
             </Flex>
           </form>
-          <Flex flexDir="column" alignItems="center" my="20px" color="#FFFFFF">
+          <Flex flexDir="column" alignItems="center" color="#FFFFFF">
             <Text fontSize="md">{weatherData.date || "Time & Date"}</Text>
             <Text fontSize="lg" mt="px">
               {city}
             </Text>
           </Flex>
-          <Flex flexDir="column" alignItems="center" my="40px">
+          <Flex flexDir="column" alignItems="center" >
             <Flex>
               <Text fontSize="8xl" fontWeight="500" textAlign="center" w="100%" color="#FFFFFF">
                 {weatherData.temperature || 0}
@@ -176,7 +177,7 @@ const Pages: React.FC = () => {
           </Flex>
           <Flex
             justifyContent="space-between"
-            mt="40px"
+            mt="20px"
             w="100%"
             alignItems="center"
             mx="auto"
