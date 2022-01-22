@@ -1,7 +1,9 @@
 
-## URL: []()
+## URL[]()
 
-![A weather App called FairWeather](./assets/images/fairweather.png)
+<p>
+<img src="./assets/images/fairweather.png"/>
+</p>
 
 This project was bootstrapped with
 [Create React App](https://github.com/facebook/create-react-app).
