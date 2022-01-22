@@ -104,22 +104,23 @@ const Pages: React.FC = () => {
           px="30px"
           py="50px"
           flexDirection="column"
+          color="#FFFFFF"
         >
           <Flex
             w="100%"
             justifyContent="space-between"
             alignItems="center"
-            mb="20"
+            mb="70px"
           >
             <Flex>
-              <Image src={Logo} alt="Logo" boxSize="45px" mr="2" />
+              <Image src={Logo} alt="Logo" boxSize="45px" mr="4px" />
               <Heading size="lg">FairWeather</Heading>
             </Flex>
           </Flex>
 
           <form onSubmit={handleSubmit}>
-            <Flex flexDir="column" alignItems="center" mb="40px">
-              <InputGroup w="70%" mb="6">
+            <Flex flexDir="column" alignItems="center" mb="60px">
+              <InputGroup w="70%" mb="15px">
                 <InputLeftElement children={<Search2Icon color="gray.300" />} />
                 <Input
                   type="text"
@@ -146,18 +147,18 @@ const Pages: React.FC = () => {
               </Tooltip>
             </Flex>
           </form>
-          <Flex flexDir="column" alignItems="center" my="5">
+          <Flex flexDir="column" alignItems="center" my="20px">
             <Text fontSize="xl">{weatherData.date || "Time & Date"}</Text>
-            <Text fontSize="2xl" mt="4">
+            <Text fontSize="2xl" mt="px">
               {city}
             </Text>
           </Flex>
-          <Flex flexDir="column" alignItems="center">
+          <Flex flexDir="column" alignItems="center" my="40px">
             <Flex>
               <Text fontSize="8xl" fontWeight="500" textAlign="center" w="100%">
                 {weatherData.temperature || 0}
               </Text>
-              <Text fontSize="xl" mt="8">
+              <Text fontSize="xl" mt="60px">
                 &deg;C
               </Text>
               <Image
@@ -166,7 +167,7 @@ const Pages: React.FC = () => {
                   weatherData.icon +
                   "@2x.png"
                 }
-                ml="2"
+                ml="2px"
                 alt=""
               />
             </Flex>
@@ -176,25 +177,25 @@ const Pages: React.FC = () => {
           </Flex>
           <Flex
             justifyContent="space-between"
-            mt="20"
-            w="60%"
+            mt="60px"
+            w="100%"
             alignItems="center"
             mx="auto"
           >
             <Flex flexDir="column" alignItems="center">
-              <Text fontSize="xl" mb="1">
+              <Text fontSize="xl" mb="1px">
                 Humidity
               </Text>
               <Text>{weatherData.humidity || 0}%</Text>
             </Flex>
             <Flex flexDir="column" alignItems="center">
-              <Text fontSize="xl" mb="1">
+              <Text fontSize="xl" mb="1px">
                 Wind speed
               </Text>
               <Text>{weatherData.windSpeed || 0}km/j</Text>
             </Flex>
             <Flex flexDir="column" alignItems="center">
-              <Text fontSize="xl" mb="1">
+              <Text fontSize="xl" mb="px">
                 Pressure
               </Text>
               <Text>{weatherData.pressure || 0}pa</Text>
@@ -216,7 +217,7 @@ const Pages: React.FC = () => {
             Weather Forecast
           </Heading>
           {/* <Chart temp={weatherData.temperature} labels={weatherData.date}/> */}
-          <Text my="10" fontSize="6xl" color="#000000">Chart not available</Text>
+          <Text my="10px" fontSize="6xl" color="#000000">Chart not available</Text>
           <Flex maxW="100%" overflow="scroll" className="no-scroll-bar">
             {forecastInfo.forecast?.length > 0
               ? forecastInfo.forecast.map((d: any, index: number) => (
