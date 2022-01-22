@@ -10,12 +10,12 @@ import {
   Text,
   Tooltip,
 } from "@chakra-ui/react";
-import React, { useEffect } from "react";
+import React from "react";
 import { Search2Icon } from "@chakra-ui/icons";
 import Logo from "../assets/images/weather.png";
 import Cards from "./Cards";
 import moment from "moment";
-import Chart from "./Chart";
+// import Chart from "./Chart";
 
 const Pages: React.FC = () => {
   const MY_KEY = process.env.REACT_APP_WEATHER_KEY;
