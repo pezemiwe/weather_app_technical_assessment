@@ -219,7 +219,7 @@ const Pages: React.FC = () => {
             Weather Forecast
           </Heading>
           <Flex w="90%">
-          <VictoryChart theme={VictoryTheme.material} width={600} height={280}>
+          <VictoryChart theme={VictoryTheme.material} width={600} height={240}>
             <VictoryAxis
               tickValues={forecastInfo.y}
               
