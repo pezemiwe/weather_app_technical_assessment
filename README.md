@@ -1,8 +1,8 @@
 
-## URL[https://brave-borg-8f2dce.netlify.app/](https://brave-borg-8f2dce.netlify.app/)
+## URL: [https://brave-borg-8f2dce.netlify.app/](https://brave-borg-8f2dce.netlify.app/)
 
 <p>
-<img src="./assets/images/fairweather.png"/>
+<img src="./src/assets/images/Sample.png"/>
 </p>
 
 This project was bootstrapped with
