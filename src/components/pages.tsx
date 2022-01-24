@@ -9,7 +9,7 @@ import {
   InputLeftElement,
   Text,
 } from "@chakra-ui/react";
-import React, { useEffect } from "react";
+import React from "react";
 import { Search2Icon } from "@chakra-ui/icons";
 import Logo from "../assets/images/weather.png";
 import Cards from "./Cards";
@@ -42,8 +42,8 @@ const Pages: React.FC = () => {
     try {
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${MY_KEY}`
-      );
-      const data = await response.json();
+        );
+        const data = await response.json();
       console.log(data);
       setWeatherData({
         data: data,
@@ -58,6 +58,7 @@ const Pages: React.FC = () => {
         latitude: data.coord.lat,
         longitude: data.coord.lon,
       });
+      getForecastWeatherData(weatherData.latitude, weatherData.longitude);
       setCity(`${data.name}, ${data.sys.country}`);
     } catch (error) {
       console.log(error);
@@ -88,9 +89,8 @@ const Pages: React.FC = () => {
     }
   };
 
-  useEffect(() => {
-    getForecastWeatherData(weatherData.latitude, weatherData.longitude);
-  }, [weatherData]);
+  // useEffect(() => {
+  // }, [weatherData]);
 
   return (
     <Box h="100vh" bg="#FFFFFF">
