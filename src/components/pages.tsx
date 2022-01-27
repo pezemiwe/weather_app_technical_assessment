@@ -16,6 +16,7 @@ import Cards from "./Cards";
 import moment from "moment";
 import { VictoryChart, VictoryAxis, VictoryLine, VictoryTheme } from "victory";
 
+
 const Pages: React.FC = () => {
   const MY_KEY = process.env.REACT_APP_WEATHER_KEY;
   const [search, setSearch] = React.useState("");
@@ -218,11 +219,10 @@ const Pages: React.FC = () => {
           <Heading fontSize="4xl" color="#000000">
             Weather Forecast
           </Heading>
-          <Flex w="90%">
-          <VictoryChart theme={VictoryTheme.material} width={600} height={240}>
+          <Flex w="90%" h="55vh">
+          <VictoryChart theme={VictoryTheme.material} width={600} height={400}>
             <VictoryAxis
               tickValues={forecastInfo.y}
-              
               style={{
                 tickLabels: { fontSize: 8 },
               }}
@@ -231,6 +231,7 @@ const Pages: React.FC = () => {
               dependentAxis
               tickValues={forecastInfo.x}
               tickFormat={(t: any) => t + "°C"}
+              label="Temperature (&deg;C)"
               style={{
                 tickLabels: { fontSize: 8 },
               }}
@@ -243,7 +244,7 @@ const Pages: React.FC = () => {
             />
           </VictoryChart>
           </Flex>
-          <Flex maxW="100%" overflow="scroll" className="no-scroll-bar">
+          <Flex maxW="100%" overflow="scroll" h="270px" className="no-scroll-bar">
             {forecastInfo.forecast?.length > 0
               ? forecastInfo.forecast.map((d: any, index: number) => (
                   <Cards
