@@ -224,7 +224,7 @@ const Pages: React.FC = () => {
             <VictoryAxis
               tickValues={forecastInfo.y}
               style={{
-                tickLabels: { fontSize: 8 },
+                tickLabels: { fontSize: 8, padding: 5, },
               }}
             />
             <VictoryAxis
@@ -233,7 +233,7 @@ const Pages: React.FC = () => {
               tickFormat={(t: any) => t + "°C"}
               label="Temperature (&deg;C)"
               style={{
-                tickLabels: { fontSize: 8 },
+                tickLabels: { fontSize: 8, padding: 12, },
               }}
             />
             <VictoryLine
