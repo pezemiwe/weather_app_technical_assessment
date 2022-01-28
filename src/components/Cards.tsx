@@ -12,7 +12,7 @@ const Cards: React.FC<props> = ({ image, day, humidity }) => {
   return (
     <Flex
       flexDir="column"
-      h="240px"
+      h="230px"
       color="#000000"
       w="200px"
       borderRadius="lg"

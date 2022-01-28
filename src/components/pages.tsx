@@ -244,7 +244,7 @@ const Pages: React.FC = () => {
             />
           </VictoryChart>
           </Flex>
-          <Flex maxW="100%" overflow="scroll" h="270px" className="no-scroll-bar">
+          <Flex maxW="100%" overflow-x="scroll" h="270px" className="no-scroll-bar">
             {forecastInfo.forecast?.length > 0
               ? forecastInfo.forecast.map((d: any, index: number) => (
                   <Cards
