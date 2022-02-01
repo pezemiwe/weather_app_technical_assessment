@@ -8,6 +8,7 @@ import {
   InputGroup,
   InputLeftElement,
   Text,
+  Tooltip,
 } from "@chakra-ui/react";
 import React from "react";
 import { Search2Icon } from "@chakra-ui/icons";
@@ -137,9 +138,11 @@ const Pages: React.FC = () => {
                   }}
                 />
               </InputGroup>
-              <Button type="submit" variantColor="teal" w="30%">
-                Submit
-              </Button>
+              <Tooltip label='Double-click twice to get 7 days forecast' placement="top">
+                <Button type="submit" variantColor="teal" w="30%">
+                  Submit
+                </Button>
+              </Tooltip>
             </Flex>
           </form>
           <Flex flexDir="column" alignItems="center" color="#FFFFFF">
@@ -218,32 +221,41 @@ const Pages: React.FC = () => {
           <Heading fontSize="4xl" color="#000000">
             Weather Forecast
           </Heading>
-          <Flex w="90%">
-          <VictoryChart theme={VictoryTheme.material} width={600} height={280}>
-            <VictoryAxis
-              tickValues={forecastInfo.y}
-              
-              style={{
-                tickLabels: { fontSize: 8 },
-              }}
-            />
-            <VictoryAxis
-              dependentAxis
-              tickValues={forecastInfo.x}
-              tickFormat={(t: any) => t + "°C"}
-              style={{
-                tickLabels: { fontSize: 8 },
-              }}
-            />
-            <VictoryLine
-              data={forecastInfo.x}
-              style={{
-                data: { stroke: "#0B0B45", strokeWidth: 2 },
-              }}
-            />
-          </VictoryChart>
+          <Flex w="90%" h="55vh">
+            <VictoryChart
+              theme={VictoryTheme.material}
+              width={600}
+              height={400}
+            >
+              <VictoryAxis
+                tickValues={forecastInfo.y}
+                style={{
+                  tickLabels: { fontSize: 8, padding: 5 },
+                }}
+              />
+              <VictoryAxis
+                dependentAxis
+                tickValues={forecastInfo.x}
+                tickFormat={(t: any) => t + "°C"}
+                label="Temperature (&deg;C)"
+                style={{
+                  tickLabels: { fontSize: 8, padding: 12 },
+                }}
+              />
+              <VictoryLine
+                data={forecastInfo.x}
+                style={{
+                  data: { stroke: "#0B0B45", strokeWidth: 2 },
+                }}
+              />
+            </VictoryChart>
           </Flex>
-          <Flex maxW="100%" overflow="scroll" className="no-scroll-bar">
+          <Flex
+            maxW="100%"
+            overflow="scroll"
+            h="270px"
+            className="no-scroll-bar"
+          >
             {forecastInfo.forecast?.length > 0
               ? forecastInfo.forecast.map((d: any, index: number) => (
                   <Cards
@@ -259,7 +271,6 @@ const Pages: React.FC = () => {
                 ))
               : ""}
           </Flex>
-         
         </Flex>
       </Flex>
     </Box>
