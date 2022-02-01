@@ -138,7 +138,7 @@ const Pages: React.FC = () => {
                   }}
                 />
               </InputGroup>
-              <Tooltip label='Double-click twice to get 7 days forecast' placement="top">
+              <Tooltip label='Click twice to get 7 days forecast' placement="top">
                 <Button type="submit" variantColor="teal" w="30%">
                   Submit
                 </Button>
