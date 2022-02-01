@@ -252,7 +252,7 @@ const Pages: React.FC = () => {
           </Flex>
           <Flex
             maxW="100%"
-            overflow-x="scroll"
+            overflow="scroll"
             h="270px"
             className="no-scroll-bar"
           >
