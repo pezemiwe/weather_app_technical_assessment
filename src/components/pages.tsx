@@ -8,6 +8,7 @@ import {
   InputGroup,
   InputLeftElement,
   Text,
+  Tooltip,
 } from "@chakra-ui/react";
 import React from "react";
 import { Search2Icon } from "@chakra-ui/icons";
@@ -138,9 +139,9 @@ const Pages: React.FC = () => {
                   }}
                 />
               </InputGroup>
-              <Button type="submit" variantColor="teal" w="30%">
+              <Tooltip label="Double click to get 7 days forecast"> <Button type="submit" variantColor="teal" w="30%">
                 Submit
-              </Button>
+              </Button></Tooltip>
             </Flex>
           </form>
           <Flex flexDir="column" alignItems="center" color="#FFFFFF">
@@ -219,7 +220,7 @@ const Pages: React.FC = () => {
           <Heading fontSize="4xl" color="#000000">
             Weather Forecast
           </Heading>
-          <Flex w="90%" h="55vh">
+          <Flex w="90%" h="50vh">
           <VictoryChart theme={VictoryTheme.material} width={600} height={400}>
             <VictoryAxis
               tickValues={forecastInfo.y}
