@@ -1,5 +1,5 @@
 
-## URL: [https://61ee034b1a91f4009f123897--loving-turing-8cc6d5.netlify.app/](https://61ee034b1a91f4009f123897--loving-turing-8cc6d5.netlify.app/)
+## URL: [https://loving-turing-8cc6d5.netlify.app/](https://loving-turing-8cc6d5.netlify.app/)
 
 <p>
 <img src="./src/assets/images/Sample.png"/>
