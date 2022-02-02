@@ -231,7 +231,7 @@ const Pages: React.FC = () => {
             color="#0B0B45"
             justifyContent="center"
             alignItems="center"
-            mb="6"
+            mb="7"
           >
             <VictoryChart theme={VictoryTheme.material} width={600}>
               <VictoryAxis
@@ -263,7 +263,7 @@ const Pages: React.FC = () => {
                 }}
               />
             </VictoryChart>
-          <Text fontWeight="bold">Seven(7) days forecast of temperature (&deg;C) represented in a line graph </Text>
+          <Text fontWeight="semi-bold">Seven(7) days forecast of temperature (&deg;C) represented in a line graph </Text>
           </Flex>
           <Flex
             maxW="100%"
