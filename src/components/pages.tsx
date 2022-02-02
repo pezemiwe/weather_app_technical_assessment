@@ -231,7 +231,7 @@ const Pages: React.FC = () => {
             color="#0B0B45"
             justifyContent="center"
             alignItems="center"
-            mb="2"
+            mb="6"
           >
             <VictoryChart theme={VictoryTheme.material} width={600}>
               <VictoryAxis
