@@ -226,12 +226,12 @@ const Pages: React.FC = () => {
           </Heading>
           <Flex
             w="90%"
-            h="50vh"
+            h="48vh"
             flexDir="column"
             color="#0B0B45"
             justifyContent="center"
             alignItems="center"
-            
+            mb="2"
           >
             <VictoryChart theme={VictoryTheme.material} width={600}>
               <VictoryAxis
