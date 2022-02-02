@@ -15,7 +15,7 @@ import { Search2Icon } from "@chakra-ui/icons";
 import Logo from "../assets/images/weather.png";
 import Cards from "./Cards";
 import moment from "moment";
-import { VictoryChart, VictoryAxis, VictoryLine, VictoryTheme } from "victory";
+import { VictoryChart, VictoryAxis, VictoryLine, VictoryTheme, VictoryLabel } from "victory";
 
 const Pages: React.FC = () => {
   const MY_KEY = process.env.REACT_APP_WEATHER_KEY;
@@ -43,8 +43,8 @@ const Pages: React.FC = () => {
     try {
       const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${MY_KEY}`
-        );
-        const data = await response.json();
+      );
+      const data = await response.json();
       console.log(data);
       setWeatherData({
         data: data,
@@ -138,7 +138,10 @@ const Pages: React.FC = () => {
                   }}
                 />
               </InputGroup>
-              <Tooltip label='Click twice to get 7 days forecast' placement="top">
+              <Tooltip
+                label="Click twice to get 7 days forecast"
+                placement="top"
+              >
                 <Button type="submit" variantColor="teal" w="30%">
                   Submit
                 </Button>
@@ -221,27 +224,38 @@ const Pages: React.FC = () => {
           <Heading fontSize="4xl" color="#000000">
             Weather Forecast
           </Heading>
-          <Flex w="90%" h="55vh">
-            <VictoryChart
-              theme={VictoryTheme.material}
-              width={600}
-              height={400}
-            >
+          <Flex
+            w="90%"
+            h="50vh"
+            flexDir="column"
+            color="#0B0B45"
+            justifyContent="center"
+            alignItems="center"
+            
+          >
+            <VictoryChart theme={VictoryTheme.material} width={600}>
               <VictoryAxis
                 tickValues={forecastInfo.y}
                 style={{
-                  tickLabels: { fontSize: 8, padding: 5 },
+                  tickLabels: { fontSize: 10, padding: 5 },
+                  axisLabel: { padding: 30 },
                 }}
               />
               <VictoryAxis
+            
                 dependentAxis
                 tickValues={forecastInfo.x}
                 tickFormat={(t: any) => t + "°C"}
                 label="Temperature (&deg;C)"
+                axisLabelComponent={<VictoryLabel dy={-45} />}
+              
                 style={{
-                  tickLabels: { fontSize: 8, padding: 12 },
+                  tickLabels: { fontSize: 10, padding: 5, fontWeight: "bold", color: "#0B0B45",  },
+                  ticks: { stroke: "#0B0B45", size: 5, strokeWidth: 2, strokeOpacity: 0.5, },
                 }}
-              />
+                fixLabelOverlap={true}
+              
+                />
               <VictoryLine
                 data={forecastInfo.x}
                 style={{
@@ -249,6 +263,7 @@ const Pages: React.FC = () => {
                 }}
               />
             </VictoryChart>
+          <Text fontWeight="bold">Seven(7) days forecast of temperature (&deg;C) represented in a line graph </Text>
           </Flex>
           <Flex
             maxW="100%"
